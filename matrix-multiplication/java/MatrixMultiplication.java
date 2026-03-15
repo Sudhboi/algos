@@ -1,4 +1,6 @@
+//Multiply Two Matrices
 public class MatrixMultiplication{
+  //Assumes the matrices are the same legnth (this is when the dot product is defined)
   public static int dot(int[] a1, int[] a2){
     int res = 0;
     for(int i = 0; i < a1.length; i++){
@@ -7,6 +9,7 @@ public class MatrixMultiplication{
     return res;
   }
 
+  //Assumes consistent size vertically (this is always true in 2D array in java)
   private static int[] column(int[][] array, int column){
     int[] res = new int[array.length];
     for(int i = 0; i < array.length; i++){
@@ -15,11 +18,12 @@ public class MatrixMultiplication{
     return res;
   }
 
-  public static int[][] matrixMult(int[][] m1, int[][] m2){
-    int[][] res = new int[m1.length][m2[0].length];
-    for(int i = 0; i<m1.length; i++){
-      for(int j = 0; j<m2[0].length; j++){
-        res[i][j] = dot(m1[i], column(m2, j));
+  //Assumes rectangular matrices with inner dimensions equal (When matrix multiplication is defined)
+  public static int[][] matrixMult(int[][] left, int[][] right){
+    int[][] res = new int[left.length][right[0].length];
+    for(int i = 0; i<left.length; i++){
+      for(int j = 0; j<right[0].length; j++){
+        res[i][j] = dot(left[i], column(right, j));
       }
     }
     return res;
