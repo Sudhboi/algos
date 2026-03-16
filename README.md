@@ -11,5 +11,4 @@ Doing my best to use many languages, not just JS and TS
 - [Matrix Determinant](determinant/) - Take the determinant of a matrix.
 
 ## To Do
-- Determinant of a matrix.
 - Mergesort.
